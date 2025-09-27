@@ -1,7 +1,8 @@
 // Simple smoke tests to ensure basic functionality
 describe('Basic App Tests', () => {
   test('should pass basic test', () => {
-    expect(true).toBe(true);
+    // This test will intentionally fail to test branch protection
+    expect(true).toBe(false);
   });
 
   test('should have required environment variables defined', () => {
@@ -35,5 +36,10 @@ describe('Basic App Tests', () => {
     
     expect(staticPath).toContain('public');
     expect(path.isAbsolute(staticPath)).toBe(true);
+  });
+
+  test('this test will fail intentionally', () => {
+    // Another failing test to demonstrate branch protection
+    expect(1 + 1).toBe(3);
   });
 });
